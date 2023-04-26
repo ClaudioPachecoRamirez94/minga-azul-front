@@ -1,37 +1,74 @@
+import {useState} from 'react'
+
 export default function Mobile() {
+  const [showMenu, setShowMenu] = useState(false)
+  const handleMenuClick = () => {
+    setShowMenu(!showMenu);
+  }
     return (
       <>
         <div className="flex justify-center xsm:h-auto xsm:bg-center sm:hidden">
           <div className="xsm:bg-background_mobile xsm:w-full xsm:h-full xsm:bg-cover">
             <div className="flex justify-center items-center h-20">
               <div className="flex w-full mx-4 justify-between">
+                <button onClick={handleMenuClick}>
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" strokeWidth="1.5" stroke="#4338CA" className="w-8 h-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
                 </div>
+                </button>
+                
                 <div>
                   <img className="xsm:w-12" src="/images/logo_navbar.png" alt="logo" />
                 </div>
               </div>
             </div>
+
+            {showMenu && (
+        <aside id="default-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full xsm:translate-x-0" aria-label="Sidebar">
+          <div className="h-full px-3 py-4 overflow-y-auto bg-[#564ae7]">
+            <ul className="space-y-2 font-medium">
+              <li>
+              <button className='text-white' onClick={handleMenuClick}>
+                <svg fill="none" className="w-6 h-6" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg> 
+              </button>
+              </li>
+              <li>
+                <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"><span className="ml-3">Home</span></a>
+              </li>
+              <li>
+                <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <span className="flex-1 ml-3 whitespace-nowrap">Manga</span>
+                </a>
+                </li>
+              <li>
+                <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <span className="flex-1 ml-3 whitespace-nowrap">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      )}
+
             <div>
               <div className="xsm:flex xsm:flex-col xsm:mt-40">
                 <h1 className="text-white xsm:text-3xl xsm:text-center xsm:font-bold">Your favorite comic book store</h1>
               </div>
-
               <div className="xsm:flex xsm:flex-col xsm:mt-20 xs:w-65 m-4">
                 <h4 className="text-white xsm:text-base xsm:self-center xsm:mb-2 text-center">From classics to novelties, we have everything you need to immerse yourself in your favorite universes. Explore our catalog and live the adventure of your life.</h4>
               </div>
-
               <div className="xsm:flex xsm:flex-col xsm:mt-20 mb-20">
                 <div className="xsm:self-center">
                   <button className="rounded-3xl bg-[#4338CA] h-10 w-60  text-white">Started</button>
                 </div>
               </div>
-
             </div>
-          </div>
+          </div>          
         </div>
+
+        
         
 <footer className="bg-[#4338CA] sm:hidden md:hidden xl:hidden 2xl:hidden">
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">

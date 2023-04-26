@@ -9,7 +9,7 @@ export default function Carousel() {
     ()=>{axios(apiUrl+'categories').then(res=>setCategories(res.data.categories)).catch(err=>(err))},
     [],
     setInterval(()=>{
-      next()
+      /* next() */
     },4000)
   )
   const next = () => {
