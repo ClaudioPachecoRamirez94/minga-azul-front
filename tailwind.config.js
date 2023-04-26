@@ -11,8 +11,8 @@ module.exports = {
           'xsm': {'min': '320px', 'max': '639px'}
         },
         backgroundImage: {
-          'background_index': `url(./src/assets/images/background_index.png)`,
-          'background_mobile': `url(./src/assets/images/background_mobile.png)`,
+          'background_index': `url(/images/background_index.png)`,
+          'background_mobile': `url(/images/background_mobile.png)`,
         }
       }
     },
