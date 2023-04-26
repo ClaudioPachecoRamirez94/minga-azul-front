@@ -1,7 +1,6 @@
 import apiUrl from "../api"
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Carousel from "./components/Carousel";
 import Index from "./pages/Index";
 import Mobile from "./components/Mobile";
 
@@ -12,7 +11,6 @@ function App() {
         <>
             <Navbar />
             <Index />
-            <Carousel />
             <Footer />
             <Mobile />
         </>
