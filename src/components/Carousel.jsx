@@ -7,7 +7,10 @@ export default function Carousel() {
   let [counter,setCounter] = useState(0);
   useEffect(
     ()=>{axios(apiUrl+'categories').then(res=>setCategories(res.data.categories)).catch(err=>(err))},
-    []
+    [],
+    setInterval(()=>{
+      next()
+    },4000)
   )
   const next = () => {
     setCounter(counter+1)
